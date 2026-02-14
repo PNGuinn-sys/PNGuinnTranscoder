@@ -1,24 +1,22 @@
 # PNGuinnTranscoder
 
-A simple Linux GUI tool for batch transcoding and sanitizing video files using FFmpeg.
+**PNGuinnTranscoder** is a lightweight Linux GUI tool for batch transcoding and sanitizing video files using FFmpeg.  
 
-This tool removes metadata, chapters, and container fingerprints by fully re-encoding
-videos into a clean output format.
+It removes metadata, chapters, and container fingerprints by fully re-encoding videos into a clean output format.
 
-Built with Python + Tkinter. No heavy dependencies.
+Built with Python + Tkinter. Minimal dependencies.
 
 ---
 
 ## Features
 
-- Multi-file batch queue
-- Clean re-encode (no metadata or chapters)
-- Automatic output naming
-- Progress bar per file
-- Sequential processing
-- Lightweight GUI
-- Linux-native workflow
-- Works with VOB / MP4 / M4V / MKV / AVI / MOV
+- Multi-file queue with sequential processing  
+- Auto-renaming: spaces replaced with `_` + `_clean` suffix (e.g., `My Movie.mp4` → `My_Movie_clean.mp4`)  
+- Cancel button to stop the queue safely  
+- Custom folder picker with **Create Folder** button  
+- Dark mode UI for reduced eye strain  
+- Supports most common video formats: `.vob`, `.mp4`, `.m4v`, `.mkv`, `.avi`, `.mov`  
+- Lightweight and Linux-native  
 
 ---
 
@@ -26,25 +24,25 @@ Built with Python + Tkinter. No heavy dependencies.
 
 Linux system with:
 
-- Python 3
-- Tkinter
+- Python 3  
+- Tkinter  
 - FFmpeg (with libx264 support)
 
 ### Install dependencies
 
-Debian / Ubuntu:
+**Debian / Ubuntu:**
 
 ```bash
 sudo apt install python3 python3-tk ffmpeg
 ```
 
-Fedora:
+**Fedora:**
 
 ```bash
 sudo dnf install python3 python3-tkinter ffmpeg
 ```
 
-Arch:
+**Arch Linux:**
 
 ```bash
 sudo pacman -S python tk ffmpeg
@@ -70,17 +68,17 @@ python3 transcoder_gui.py
 
 ### Workflow
 
-1. Click **Add Files**
-2. Select one or more video files
-3. Choose an output folder
-4. Click **Start Queue**
-5. Files will transcode sequentially
-
-Output files are automatically named:
+1. Click **Add Files** and select one or more video files  
+2. Choose an **Output Folder** or create a new folder in the dialog  
+3. Click **Start Queue** to begin processing  
+4. Files are automatically renamed using the pattern:  
 
 ```
-originalname_clean.mp4
+Original_Name_clean.mp4
 ```
+
+5. Monitor progress with the progress bar and status text  
+6. Cancel the queue anytime with the **Cancel** button  
 
 ---
 
@@ -88,23 +86,13 @@ originalname_clean.mp4
 
 Each file is:
 
-- decoded
-- re-encoded using H.264
-- audio re-encoded to AAC
-- metadata stripped
-- chapters removed
-- container rebuilt from scratch
+- Fully decoded and re-encoded using H.264  
+- Audio re-encoded to AAC  
+- Metadata stripped  
+- Chapters removed  
+- Container rebuilt from scratch  
 
-This creates a clean, normalized video file.
-
----
-
-## Notes
-
-- This is a transcoder, not a DVD ripper
-- Input files must already exist on disk
-- Encoding time depends on CPU speed
-- No GPU acceleration (CPU encoding only)
+Resulting in a clean, normalized video file ready for storage, sharing, or archival.
 
 ---
 
@@ -115,34 +103,28 @@ transcoder_gui.py
 README.md
 ```
 
-Single-file tool by design.
+Single-file tool for simplicity.
 
 ---
 
 ## License
 
-Personal use / educational project.
-
-Modify freely.
+Personal / educational use. Modify freely.
 
 ---
 
 ## Future Ideas
 
-- Cancel queue button
-- Encoding presets
-- Drag and drop support
-- Subtitle selection
-- Audio track selection
-- Batch folder mode
-- Logging console
-- Resume failed jobs
-- Watch folder automation
+- Drag & drop file support  
+- ETA / estimated time remaining  
+- Encoding presets (small, archival, streaming)  
+- Subtitle/audio track selection  
+- Queue save/load  
+- Per-file output folders  
+- Watch folder automation  
 
 ---
 
 ## Author
 
-Built as a lightweight Linux video sanitization pipeline.
-
-
+Developed as a lightweight Linux video sanitization and batch transcoding app: **PNGuinnTranscoder**
