@@ -63,7 +63,7 @@ You should see `libx264` listed.
 Run the program:
 
 ```bash
-python3 transcoder_gui.py
+python3 PNGuinnTranscoder3.0.py
 ```
 
 ### Workflow
@@ -99,7 +99,7 @@ Resulting in a clean, normalized video file ready for storage, sharing, or archi
 ## Project Structure
 
 ```
-transcoder_gui.py
+PNGuinnTranscoder.py
 README.md
 ```
 
